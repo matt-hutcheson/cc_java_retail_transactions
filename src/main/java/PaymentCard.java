@@ -21,4 +21,8 @@ public abstract class PaymentCard {
     public abstract void calcTransactionFee();
 
     public abstract void charge();
+
+    public ArrayList<Double> getCharges(){
+        return this.charges;
+    }
 }

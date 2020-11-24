@@ -13,8 +13,8 @@ public class CreditCardTest {
         creditCard = new CreditCard(4444444444444444L, myDate, "Alan Johnson", "RBS", "Mastercard", 0.2, 1000);
     }
     @Test
-    public void totalChargesStartsEmpty(){
-        assertEquals(0, creditCard.getTotalCharges().size());
+    public void chargesStartsEmpty(){
+        assertEquals(0, creditCard.getCharges().size());
     }
 
 }
