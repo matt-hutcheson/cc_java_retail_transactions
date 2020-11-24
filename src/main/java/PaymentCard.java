@@ -25,4 +25,12 @@ public abstract class PaymentCard {
     public ArrayList<Double> getCharges(){
         return this.charges;
     }
+
+    public long getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(long cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 }
