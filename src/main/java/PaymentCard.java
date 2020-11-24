@@ -1,16 +1,16 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public abstract class PaymentCard {
-    private ArrayList<Double> totalCarges;
-    private int cardNumber;
-    private Date expiryDate;
+    private ArrayList<Double> charges;
+    private long cardNumber;
+    private LocalDate expiryDate;
     private String name;
     private String bank;
     private String provider;
 
-    public PaymentCard(ArrayList<Double> totalCarges, int cardNumber, Date expiryDate, String name, String bank, String provider){
-        this.totalCarges = totalCarges;
+    public PaymentCard(long cardNumber, LocalDate expiryDate, String name, String bank, String provider){
+        this.charges = new ArrayList<>();
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
         this.name = name;
