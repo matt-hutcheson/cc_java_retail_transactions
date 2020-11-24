@@ -36,5 +36,31 @@ public class CreditCardTest {
         creditCard.setExpiryDate(myDate);
         assertEquals(myDate, creditCard.getExpiryDate());
     }
-
+    @Test
+    public void hasName(){
+        assertEquals("Alan Johnson", creditCard.getName());
+    }
+    @Test
+    public void canSetName(){
+        creditCard.setName("Broke Bob");
+        assertEquals("Broke Bob", creditCard.getName());
+    }
+    @Test
+    public void hasBank(){
+        assertEquals("RBS", creditCard.getBank());
+    }
+    @Test
+    public void canSetBank(){
+        creditCard.setBank("Halifax");
+        assertEquals("Halifax", creditCard.getBank());
+    }
+    @Test
+    public void hasProvider(){
+        assertEquals("Mastercard", creditCard.getProvider());
+    }
+    @Test
+    public void canSetProvider(){
+        creditCard.setProvider("Visa");
+        assertEquals("Visa", creditCard.getProvider());
+    }
 }
