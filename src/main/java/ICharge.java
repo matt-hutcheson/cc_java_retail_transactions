@@ -1,4 +1,4 @@
 public interface ICharge {
-    void calcTransactionFee();
-    void charge();
+    double calcTransactionFee(double cost);
+    void charge(double newCharge);
 }

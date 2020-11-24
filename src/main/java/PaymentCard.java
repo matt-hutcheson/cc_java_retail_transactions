@@ -18,12 +18,16 @@ public abstract class PaymentCard {
         this.provider = provider;
     }
 
-    public abstract void calcTransactionFee();
+    public abstract double calcTransactionFee(double cost);
 
-    public abstract void charge();
+    public abstract void charge(double newCharge);
 
     public ArrayList<Double> getCharges(){
         return this.charges;
+    }
+
+    public void addCharge(double newCharge){
+        this.charges.add(newCharge);
     }
 
     public long getCardNumber() {

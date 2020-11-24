@@ -81,5 +81,14 @@ public class CreditCardTest {
         creditCard.setCreditLimit(2000);
         assertEquals(2000, creditCard.getCreditLimit(), 0.01);
     }
+    @Test
+    public void canCalcTransactionFee(){
+        assertEquals(40, creditCard.calcTransactionFee(200), 0.01);
+    }
+    @Test
+    public void canCharge(){
+        creditCard.charge(200);
+        assertEquals(1, creditCard.getCharges().size());
+    }
 
 }

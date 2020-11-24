@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class CreditCard extends PaymentCard implements ICharge {
     private double riskMultiplier;
@@ -11,12 +10,13 @@ public class CreditCard extends PaymentCard implements ICharge {
         this.riskMultiplier = riskMultiplier;
         this.creditLimit = creditLimit;
     }
-    public void calcTransactionFee(){
-
+    public double calcTransactionFee(double cost){
+        return cost * riskMultiplier;
     }
 
-    public void charge(){
-
+    public void charge(double newCharge){
+         this.addCharge(newCharge);
+         this.creditLimit -= newCharge;
     }
 
     public double getRiskMultiplier() {
