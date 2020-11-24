@@ -63,4 +63,23 @@ public class CreditCardTest {
         creditCard.setProvider("Visa");
         assertEquals("Visa", creditCard.getProvider());
     }
+    @Test
+    public void hasRiskMultiplier(){
+        assertEquals(0.2, creditCard.getRiskMultiplier(), 0.01);
+    }
+    @Test
+    public void canSetRiskMultiplier(){
+        creditCard.setRiskMultiplier(0.4);
+        assertEquals(0.4, creditCard.getRiskMultiplier(), 0.01);
+    }
+    @Test
+    public void hasCreditLimit(){
+        assertEquals(1000, creditCard.getCreditLimit(), 0.01);
+    }
+    @Test
+    public void canSetCreditLimit(){
+        creditCard.setCreditLimit(2000);
+        assertEquals(2000, creditCard.getCreditLimit(), 0.01);
+    }
+
 }
