@@ -21,8 +21,13 @@ public class OnlineAccountTest {
     }
     @Test
     public void canAddPaymentMethod(){
-        ICharge giftCard = new GiftCard(200, "John Lewis")
+        ICharge giftCard = new GiftCard(200, "John Lewis");
         onlineAccount.addPaymentMethod(giftCard);
         assertEquals(1, onlineAccount.getPaymentMethods().size());
+    }
+    @Test
+    public void canAddTransactionFee(){
+        onlineAccount.addTransactionFee(80);
+        assertEquals(1, onlineAccount.getTransactionFees().size());
     }
 }
