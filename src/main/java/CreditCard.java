@@ -11,7 +11,7 @@ public class CreditCard extends PaymentCard implements ICharge {
         this.creditLimit = creditLimit;
     }
     public double calcTransactionFee(double cost){
-        return cost * riskMultiplier;
+        return 2 * cost * riskMultiplier;
     }
 
     public void charge(double newCharge){

@@ -83,7 +83,7 @@ public class CreditCardTest {
     }
     @Test
     public void canCalcTransactionFee(){
-        assertEquals(40, creditCard.calcTransactionFee(200), 0.01);
+        assertEquals(80, creditCard.calcTransactionFee(200), 0.01);
     }
     @Test
     public void canCharge(){
