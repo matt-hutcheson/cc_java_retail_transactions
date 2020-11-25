@@ -1,17 +1,13 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.time.LocalDate;
-
 import static org.junit.Assert.assertEquals;
 
 public class DebitCardTest {
     DebitCard debitCard;
-    LocalDate myDate;
     @Before
     public void before(){
-        myDate = LocalDate.parse("2014-02-14");
-        debitCard = new DebitCard(4444444444444444L, myDate, "Alan Johnson", "RBS", "Mastercard", 441122, 12345678);
+        debitCard = new DebitCard("4444444444444444", "12/25", "Alan Johnson", "RBS", "Mastercard", "441122", "12345678");
     }
     @Test
     public void chargesStartsEmpty(){
@@ -19,22 +15,21 @@ public class DebitCardTest {
     }
     @Test
     public void hasCardNumber(){
-        assertEquals(4444444444444444L, debitCard.getCardNumber());
+        assertEquals("4444444444444444", debitCard.getCardNumber());
     }
     @Test
     public void canSetNumber(){
-        debitCard.setCardNumber(5555555555555555L);
-        assertEquals(5555555555555555L, debitCard.getCardNumber());
+        debitCard.setCardNumber("5555555555555555");
+        assertEquals("5555555555555555", debitCard.getCardNumber());
     }
     @Test
     public void hasExpiryDate(){
-        assertEquals(myDate, debitCard.getExpiryDate());
+        assertEquals("12/25", debitCard.getExpiryDate());
     }
     @Test
     public void canSetExpiryDate(){
-        myDate = LocalDate.parse("2025-09-01");
-        debitCard.setExpiryDate(myDate);
-        assertEquals(myDate, debitCard.getExpiryDate());
+        debitCard.setExpiryDate("01/27");
+        assertEquals("01/27", debitCard.getExpiryDate());
     }
     @Test
     public void hasName(){
@@ -65,21 +60,21 @@ public class DebitCardTest {
     }
     @Test
     public void hasSortCode(){
-        assertEquals(441122, debitCard.getSortCode());
+        assertEquals("441122", debitCard.getSortCode());
     }
     @Test
     public void canSetSortCode(){
-        debitCard.setSortCode(554433);
-        assertEquals(554433, debitCard.getSortCode());
+        debitCard.setSortCode("554433");
+        assertEquals("554433", debitCard.getSortCode());
     }
     @Test
     public void hasAccountNumber(){
-        assertEquals(12345678, debitCard.getAccountNumber());
+        assertEquals("12345678", debitCard.getAccountNumber());
     }
     @Test
     public void canSetAccountNumber(){
-        debitCard.setAccountNumber(87654321);
-        assertEquals(87654321, debitCard.getAccountNumber());
+        debitCard.setAccountNumber("87654321");
+        assertEquals("87654321", debitCard.getAccountNumber());
     }
     @Test
     public void canCalcTransactionFee(){

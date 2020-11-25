@@ -10,8 +10,7 @@ public class CreditCardTest {
     LocalDate myDate;
     @Before
     public void before(){
-        myDate = LocalDate.parse("2014-02-14");
-        creditCard = new CreditCard(4444444444444444L, myDate, "Alan Johnson", "RBS", "Mastercard", 0.2, 1000);
+        creditCard = new CreditCard("4444444444444444", "12/25", "Alan Johnson", "RBS", "Mastercard", 0.2, 1000);
     }
     @Test
     public void chargesStartsEmpty(){
@@ -19,22 +18,21 @@ public class CreditCardTest {
     }
     @Test
     public void hasCardNumber(){
-        assertEquals(4444444444444444L, creditCard.getCardNumber());
+        assertEquals("4444444444444444", creditCard.getCardNumber());
     }
     @Test
     public void canSetNumber(){
-        creditCard.setCardNumber(5555555555555555L);
-        assertEquals(5555555555555555L, creditCard.getCardNumber());
+        creditCard.setCardNumber("5555555555555555");
+        assertEquals("5555555555555555", creditCard.getCardNumber());
     }
     @Test
     public void hasExpiryDate(){
-        assertEquals(myDate, creditCard.getExpiryDate());
+        assertEquals("12/25", creditCard.getExpiryDate());
     }
     @Test
     public void canSetExpiryDate(){
-        myDate = LocalDate.parse("2025-09-01");
-        creditCard.setExpiryDate(myDate);
-        assertEquals(myDate, creditCard.getExpiryDate());
+        creditCard.setExpiryDate("11/25");
+        assertEquals("11/25", creditCard.getExpiryDate());
     }
     @Test
     public void hasName(){

@@ -1,15 +1,15 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public abstract class PaymentCard {
+public abstract class PaymentCard implements ICharge{
     private ArrayList<Double> charges;
-    private long cardNumber;
-    private LocalDate expiryDate;
+    private String cardNumber;
+    private String expiryDate;
     private String name;
     private String bank;
     private String provider;
 
-    public PaymentCard(long cardNumber, LocalDate expiryDate, String name, String bank, String provider){
+    public PaymentCard(String cardNumber, String expiryDate, String name, String bank, String provider){
         this.charges = new ArrayList<>();
         this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
@@ -17,10 +17,6 @@ public abstract class PaymentCard {
         this.bank = bank;
         this.provider = provider;
     }
-
-    public abstract double calcTransactionFee(double cost);
-
-    public abstract void charge(double newCharge);
 
     public ArrayList<Double> getCharges(){
         return this.charges;
@@ -30,19 +26,19 @@ public abstract class PaymentCard {
         this.charges.add(newCharge);
     }
 
-    public long getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(long cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 
-    public LocalDate getExpiryDate() {
+    public String getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(LocalDate expiryDate) {
+    public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
     }
 

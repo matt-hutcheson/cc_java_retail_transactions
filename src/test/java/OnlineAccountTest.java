@@ -1,10 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.smartcardio.Card;
-
-import java.time.LocalDate;
-
 import static org.junit.Assert.assertEquals;
 
 public class OnlineAccountTest {
@@ -36,8 +32,7 @@ public class OnlineAccountTest {
     }
     @Test
     public void canChargeCard(){
-        LocalDate myDate = LocalDate.parse("2014-02-14");
-        ICharge debitCard = new DebitCard(3333333333333333L, myDate, "Alan Johnson", "RBS", "Visa", 440022, 87654321);
+        ICharge debitCard = new DebitCard("3333333333333333", "12/25", "Alan Johnson", "RBS", "Visa", "440022", "87654321");
         onlineAccount.addPaymentMethod(debitCard);
         onlineAccount.charge(40, debitCard);
         assertEquals(1, onlineAccount.getPaymentMethods().size());

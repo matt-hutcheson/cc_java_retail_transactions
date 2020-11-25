@@ -5,7 +5,7 @@ public class CreditCard extends PaymentCard implements ICharge {
 
     private double creditLimit;
 
-    public CreditCard(long cardNumber, LocalDate expiryDate, String name, String bank, String provider, double riskMultiplier, double creditLimit){
+    public CreditCard(String cardNumber, String expiryDate, String name, String bank, String provider, double riskMultiplier, double creditLimit){
         super(cardNumber, expiryDate, name, bank, provider);
         this.riskMultiplier = riskMultiplier;
         this.creditLimit = creditLimit;
@@ -15,7 +15,7 @@ public class CreditCard extends PaymentCard implements ICharge {
     }
 
     public void charge(double newCharge){
-         this.addCharge(newCharge);
+         super.addCharge(newCharge);
          this.creditLimit -= newCharge;
     }
 
