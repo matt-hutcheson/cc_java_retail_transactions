@@ -24,4 +24,9 @@ public class OnlineAccount {
     public void addTransactionFee(double newTransactionFee){
         this.transactionFees.add(newTransactionFee);
     }
+
+    public void charge(double newCharge, ICharge card){
+        card.charge(newCharge);
+        this.transactionFees.add(card.calcTransactionFee(newCharge));
+    }
 }
